@@ -10,7 +10,7 @@ class RegressionState(TypedDict):
     notified: bool
 
 def parse_diff(state: RegressionState) -> dict:
-    changed = ["EndpointX.handler", "ServiceY.compute"]
+    changed = ["EndpointX.handler"]
     return {"changed_functions": changed}
 
 def dependency_lookup(state: RegressionState) -> dict:
