@@ -12,7 +12,7 @@ This repo does not modify or replace the production Regression Analyzer. It reus
 
 ## The core result
 
-One edge in this graph is genuinely agentic: an LLM decides whether to run `dependency_lookup` based on the actual content of a diff, not a rule matching on function names. Tested against two diffs modifying the identical function — a real logic change and a comment-only edit — the LLM correctly told them apart. The remaining edges stay deterministic, on purpose — see `agentic_workflow.md` for the full reasoning behind which edge got which treatment, session-by-session build notes, and the interview-ready answer this project produced.
+One edge in this graph is genuinely agentic: an LLM decides whether to run `dependency_lookup` based on the actual content of a diff, not a rule matching on function names. Tested against two diffs modifying the identical function — a real logic change and a comment-only edit — the LLM correctly told them apart. The remaining edges stay deterministic, on purpose — see agentic_workflow_phase1.md for the single-decision-edge build, and agentic_workflow_phase2.md for the multi-step loop extension.
 
 ## Setup
 
