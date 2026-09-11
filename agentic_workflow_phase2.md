@@ -6,6 +6,9 @@ Goal: extend the single-decision-point graph from Phase 1 (regression-agent-lang
 Repo: regression-agent-langgraph (same repo, new branch or continued on main — decide at Session 1).
 
 Grounding: Phase 1 built one LLM-controlled edge (decide whether to call dependency_lookup). Phase 2's target: when dependency_lookup returns low-confidence or ambiguous results, let the LLM decide to loop — re-examine the diff with different framing, try a different tool, or escalate — instead of always flowing straight to risk_score.
+
+Context to carry into the new thread: re-attach the Regression Analyser PDF, and paste this file plus the completed agentic_workflow.md from Phase 1 for full grounding on what's already built and why each existing edge is agentic or deterministic.
+
 ---
 
 ## Session-by-session plan
@@ -17,9 +20,5 @@ Grounding: Phase 1 built one LLM-controlled edge (decide whether to call depende
 - [ ] **Session 4 — Test against real and adversarial cases.** Confirm the loop actually triggers on genuinely ambiguous input (not just re-running Phase 1's clean examples). Test that the iteration cap actually stops runaway loops. Test cost: token count per full loop vs Phase 1's single-decision cost.
 
 - [ ] **Session 5 — EM synthesis.** When does a loop earn its added cost and complexity over a single decision point? Extend Phase 1's four-axis framework with a fifth consideration specific to loops: bounded vs unbounded iteration, and how you'd justify a max-retry cap to someone worried about cost or latency in production. Tie into interview narrative alongside Phase 1's material.
-
----
-
-## How to resume in a new thread
-
+--
 Paste this file back in, confirm which session to start from, re-attach the Regression Analyzer document, and paste Phase 1's agentic_workflow.md for grounding on what's already built.
