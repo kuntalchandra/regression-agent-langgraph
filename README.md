@@ -1,12 +1,12 @@
 # regression-agent-langgraph
 
-A learning project: rebuilding the real logic of a production CI/CD tool: the Regression Analyzer, as a LangGraph graph, to move from a fully deterministic pipeline toward genuine LLM-controlled routing.
+A learning project: rebuilding the real logic of a production CI/CD tool, the Regression Analyser, as a LangGraph graph, to move from a fully deterministic pipeline toward genuine LLM-controlled routing.
 
-This repo does not modify or replace the production Regression Analyzer. It reuses two of its own classes, `CodeAnalyzer` and `EndpointMapper`, unmodified, against a small sample codebase, so the graph's decisions run on real logic rather than stubs.
+This repo does not modify or replace the production Regression Analyser. It reuses two of its own classes, `CodeAnalyzer` and `EndpointMapper`, unmodified, against a small sample codebase, so the graph's decisions run on real logic rather than stubs.
 
 ## What's here
 
-- `graph.py` — a four-node LangGraph graph: `parse_diff → decide_dependency_check → dependency_lookup → risk_score → notify`
+- `graph.py` — a five-node LangGraph graph: `parse_diff → decide_dependency_check → dependency_lookup → risk_score → notify`
 - `regression_analyser/` — the real `CodeAnalyzer` and `EndpointMapper` classes, plus trimmed local `models.py`/`config.py`/`utils.py` stand-ins so they run standalone without the production repo's GitHub/OpenAI dependencies
 - `sample_codebase/` — a small fixture API for `EndpointMapper`'s AST indexer to walk
 
